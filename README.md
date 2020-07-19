@@ -1,4 +1,4 @@
-# Teach a model to classify images and optimize inference with OpenVINO in 20mins with zero setup
+# Teach a model to classify images and optimize inference with OpenVINO (WIP)
 
 ## Basic Requirements
 - Latest stable Docker installed on a Linux System
@@ -53,7 +53,7 @@ python teachable_img_keras_orig_classify.py keras_model.h5 test.jpg
 ```
 
 ## Known Limitations
-- Only Teachable Machine: Image projects are covered for now.
+- Only Teachable Machine 2.0: Image projects are covered for now.
 - Depending upon popularity, Audio and Pose projects can be covered in the future.
 
 
