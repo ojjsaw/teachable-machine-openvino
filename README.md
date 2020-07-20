@@ -1,12 +1,15 @@
 # Train a NN to classify images and optimize cpu inference with OpenVINO in 10mins
 
+[![Teachable Machine OpenVINO Demo](https://miro.medium.com/max/428/1*hsUO_tURpGFb5ld0H52bbg.gif)](https://youtu.be/-3Hq_8935TA "Teachable Machine OpenVINO Demo")
+
+Check out the Medium Article for visual start-to-finish steps: https://link.medium.com/bDLwhFpsh8
+
 ## Basic Requirements
 - Latest stable Docker and unzip installed on your Linux System
 - Network connectivity to hub.docker.com (instructions assume no proxy)
 - 6th to 10th generation Intel Core or Intel Xeon processors or 3rd generation Intel® Xeon® Scalable processors
 
 ## Train and export a custom model in your browser
-Check out the Medium Article for visual steps: URL
 
 - Navigate to https://teachablemachine.withgoogle.com/train and start the "Image Project"
 - Edit Class Names to labels (add as many), record using the webcam or file upload
@@ -50,6 +53,13 @@ cd /workdir
 pip install Pillow
 python teachable_img_keras_orig_classify.py keras_model.h5 test.jpg
 ```
+
+## Performance Information
+In my case, it took 804ms (~1.2fps) for the predict function with the default example code and model, while it took mere 4ms (~250fps) with OpenVINO python code on the same test.jpg image with OpenVINO inference and conversion with the code from this repo. For more info, see https://link.medium.com/m6nSxDNrh8
+
+[![Original TF Keras](https://miro.medium.com/max/432/1*xRhJ7GvzKHxi0OxXwWkkZw.gif)](https://miro.medium.com/max/432/1*xRhJ7GvzKHxi0OxXwWkkZw.gif "Original TF Keras")
+[![OpenVINO Inference](https://miro.medium.com/max/434/1*w0YBIIR5xzByUQSvhib1gQ.gif)](https://miro.medium.com/max/434/1*w0YBIIR5xzByUQSvhib1gQ.gif "OpenVINO Inference")
+
 
 ## Known Limitations
 - Only Teachable Machine 2.0: Image projects are covered for now.
